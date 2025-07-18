@@ -1,16 +1,25 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
-import { robots } from "./robots";
 import SearchBox from "./SearchBox";
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     // Initialize state with robots and searchfield
     this.state = {
-      robots: robots,
+      robots: [],
       searchfield: "",
     };
+  }
+
+  // Lifecycle method to fetch robots data
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => {
+        this.setState({ robots: users });
+      });
   }
 
   // Handle search input change
@@ -24,14 +33,17 @@ class App extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-
-    return (
-      <div className="tc">
-        <h1>RoboFriends</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <CardList robots={filteredRobots} />
-      </div>
-    );
+    if (this.state.robots.length === 0) {
+      return <h1>Loading...</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1 className="f1">RoboFriends</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <CardList robots={filteredRobots} />
+        </div>
+      );
+    }
   }
 }
 
