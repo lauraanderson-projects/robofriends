@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lauraanderson-projects/robofriends/static/css/main.b82bddaa.css",
+    "main.js": "/lauraanderson-projects/robofriends/static/js/main.8f987308.js",
+    "static/js/453.e6be0e86.chunk.js": "/lauraanderson-projects/robofriends/static/js/453.e6be0e86.chunk.js",
+    "index.html": "/lauraanderson-projects/robofriends/index.html",
+    "main.b82bddaa.css.map": "/lauraanderson-projects/robofriends/static/css/main.b82bddaa.css.map",
+    "main.8f987308.js.map": "/lauraanderson-projects/robofriends/static/js/main.8f987308.js.map",
+    "453.e6be0e86.chunk.js.map": "/lauraanderson-projects/robofriends/static/js/453.e6be0e86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b82bddaa.css",
+    "static/js/main.8f987308.js"
+  ]
+}
